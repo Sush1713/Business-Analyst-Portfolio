@@ -56,7 +56,7 @@ This SOP gives a coordinator a clear, repeatable process to make that happen, wo
 
 ---
 
-## 🛠️ Tools and Topics
+##  Tools and Topics
 
 `Microsoft 365` `Outlook` `Teams` `SharePoint` `MFA` `ERP` `CRM` `Jira` `Confluence`
 
