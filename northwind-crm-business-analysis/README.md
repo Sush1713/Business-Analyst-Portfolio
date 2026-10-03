@@ -72,12 +72,12 @@ Northwind's sales team keeps customer contacts in separate spreadsheets and emai
 ### Traceability Matrix
 Every requirement is linked to the work that delivers it and the test that proves it.
 
-![Traceability Matrix](images/traceability-matrix.png)
+![Traceability Matrix](traceability-matrix.png)
 
 ### Gantt Chart – Phase 1 (Sprints 1–2)
 Formula-driven schedule showing phases, user stories, tasks, owners and milestones.
 
-![Gantt Chart](images/gantt-chart.png)
+![Gantt Chart](gantt-chart.png)
 
 ---
 
