@@ -81,7 +81,7 @@ Formula-driven schedule showing phases, user stories, tasks, owners and mileston
 
 ---
 
-## 🛠️ Business Analysis Techniques Used
+##  Business Analysis Techniques Used
 
 - **Requirements elicitation and documentation:** functional and non-functional requirements with unique IDs
 - **User stories:** written in "As a… I want… so that…" format and split using the INVEST principles
