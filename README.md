@@ -8,6 +8,7 @@ Welcome to my business analysis portfolio. Each folder contains a complete proje
 
 | Project | Description | Skills Demonstrated |
 |---|---|---|
+| [**Air New Zealand Customer Review Analytics**](air-new-zealand-review-analytics) | Excel and Power BI analysis of 630 customer reviews, answering 5 business questions with key insights and recommendations | Data cleaning, Excel analysis, Power Query, DAX measures, Power BI dashboard, insight and recommendation writing |
 | [**Northwind CRM Implementation**](northwind-crm-business-analysis) | End-to-end BA case study for a CRM implementation, from business problem to requirements, user stories, Gantt chart, traceability matrix and risk log | Requirements elicitation, user stories, acceptance criteria, MoSCoW, traceability, Agile planning, risk management |
 | [**Microsoft 365 Staff Onboarding SOP**](sample-sop-microsoft-365-staff-onboarding) | Standard Operating Procedure for onboarding new staff to Microsoft 365 | Process documentation, SOP writing, step-by-step procedures |
 
@@ -24,6 +25,9 @@ Welcome to my business analysis portfolio. Each folder contains a complete proje
 - Process documentation and SOPs
 - Risk management
 - Microsoft Excel, Microsoft 365
+- Data analysis in Excel (AVERAGEIFS, COUNTIFS, CORREL, helper columns)
+- Power BI dashboards, Power Query and DAX measures
+- Turning data into insights and business recommendations
 
 ---
 
