@@ -2,9 +2,9 @@
 
 **Tools:** Microsoft Excel · Power BI (Power Query, DAX) &nbsp;|&nbsp; **Data:** 630 customer reviews &nbsp;|&nbsp; **Author:** Susmita Kumari Giri
 
-![Air New Zealand Review Analytics Dashboard](dashboard/AirNZ_Dashboard.png)
+![Air New Zealand Review Analytics Dashboard](AirNZ_Dashboard.png)
 
-> 📄 [Download the dashboard as PDF](dashboard/AirNZ_Dashboard.pdf) &nbsp;·&nbsp; 📊 [Open the Power BI file (.pbix)](dashboard/AirNZ_Dashboard.pbix) &nbsp;·&nbsp; ❓ [Five Business Questions](docs/AirNZ_Five_Business_Questions.pdf)
+> 📄 [Download the dashboard as PDF](AirNZ_Dashboard.pdf) &nbsp;·&nbsp; 📊 [Open the Power BI file (.pbix)](AirNZ_Dashboard.pbix)
 
 ---
 
@@ -38,7 +38,6 @@ Air New Zealand wants to understand what customers think of its service and what
 
 The goal is to turn customer reviews into **clear, data-based actions**.
 
-> **Note:** the Five Business Questions document was first planned with Tableau charts. The final dashboard was built in **Power BI**, so each question below shows the Power BI chart that was used.
 
 ---
 
@@ -46,11 +45,12 @@ The goal is to turn customer reviews into **clear, data-based actions**.
 
 | Item | Detail |
 |---|---|
-| Source | Public airline customer reviews for Air New Zealand — **[add the source name and link here]** |
+| Source | Public multi-airline customer review dataset, filtered to Air New Zealand — **https://data.mendeley.com/datasets/vgjk58vf8h/1** |
 | Size | 630 reviews, 25 columns |
 | Period | January 2015 – August 2025 (review date) |
 | Scope | One airline (Air New Zealand), all routes and cabin classes |
 | File used in Power BI | `AirNZ_Analysis.xlsx` → sheet **"Power BI_data"** |
+| Excel workbook | Not included in this repository: the file is larger than GitHub's 25 MB limit and contains the raw review text. The Excel results are shown in the tables in Section 6. |
 
 ### Data Dictionary (main fields)
 
@@ -78,8 +78,9 @@ The goal is to turn customer reviews into **clear, data-based actions**.
 
 ### Step 1 – Cleaning and helper columns in Excel
 
-| Helper column | How it was created | Used for |
+| Step / helper column | How it was created | Used for |
 |---|---|---|
+| Air NZ filter | Filtered the multi-airline review dataset to **Air New Zealand only** (`airline_name` = air-new-zealand), giving 630 reviews | Focus on one airline |
 | `Year` | Year taken from `review_date` | Grouping reviews by time |
 | `Period` | IF formula on Year: **2015–2019 = Before COVID**, **2020–2022 = During COVID**, **2023–2025 = After COVID** | BQ3 |
 | `Recommend Flag` | `yes` = 1, `no` = 0 | BQ2, BQ3 and the Recommend % KPI |
@@ -185,7 +186,7 @@ RETURN DIVIDE(cov, sx * sy)
 - **Excel method:** `AVERAGE` on each service-score column.
 - **Power BI chart:** Bar chart — one bar per service area, sorted high to low (`Avg Service Score` measure); shortest bar = weakest.
 
-![BQ1: Average rating for each service area](images/BQ1_Service_Areas.png)
+![BQ1: Average rating for each service area](BQ1_Service_Areas.png)
 
 | Service area | Avg score (out of 5) |
 |---|---|
@@ -209,7 +210,7 @@ RETURN DIVIDE(cov, sx * sy)
 - **Excel method:** `COUNTIFS` to count the 'no' answers per group, divided by each group's total.
 - **Power BI chart:** Two column charts — one bar per group, showing the % who don't recommend (`Not Recommend %` measure).
 
-![BQ2: % not recommending by cabin class and traveller type](images/BQ2_Not_Recommending.png)
+![BQ2: % not recommending by cabin class and traveller type](BQ2_Not_Recommending.png)
 
 **By cabin class**
 
@@ -241,7 +242,7 @@ RETURN DIVIDE(cov, sx * sy)
 - **Excel method:** A 'Period' helper column (IF formula on the year), then `AVERAGEIFS` / `COUNTIFS` per period.
 - **Power BI chart:** Line chart — the three periods along the bottom; Recommend % on the left axis and Avg Value for Money on the right axis.
 
-![BQ3: Recommendation and value for money across the three periods](images/BQ3_COVID_Periods.png)
+![BQ3: Recommendation and value for money across the three periods](BQ3_COVID_Periods.png)
 
 | Period | Reviews | Recommend % | Avg Value for Money (out of 5) |
 |---|---|---|---|
@@ -261,7 +262,7 @@ RETURN DIVIDE(cov, sx * sy)
 - **Excel method:** `CORREL` between each service-score column and the Overall Rating column; compare the numbers (closer to 1 = stronger link).
 - **Power BI chart:** Bar chart — the correlation of each service area with the Overall Rating, sorted high to low (`Correlation with Overall` DAX measure).
 
-![BQ4: Link between each service area and the Overall Rating](images/BQ4_Rating_Drivers.png)
+![BQ4: Link between each service area and the Overall Rating](BQ4_Rating_Drivers.png)
 
 | Service area | Correlation with Overall Rating |
 |---|---|
@@ -285,7 +286,7 @@ RETURN DIVIDE(cov, sx * sy)
 - **Excel method:** `AVERAGEIF` on the Overall Rating, filtered by the verification column — once for each group.
 - **Power BI chart:** Column chart — two bars (verified vs not verified) side by side.
 
-![BQ5: Ratings of verified vs non-verified reviews](images/BQ5_Verified_vs_Not.png)
+![BQ5: Ratings of verified vs non-verified reviews](BQ5_Verified_vs_Not.png)
 
 | Status | Reviews | Avg Overall Rating (out of 10) |
 |---|---|---|
@@ -334,10 +335,9 @@ RETURN DIVIDE(cov, sx * sy)
 
 ---
 
+## 10. How to Use the Dashboard
 
-### How to use
-
-1. Open the `dashboard` folder and download **AirNZ_Dashboard.pbix**.
+1. Download **AirNZ_Dashboard.pbix** from the link at the top of this page.
 2. Open it in **Power BI Desktop** (free).
 3. Use the **Period** and **Cabin** slicers to explore the results.
 
@@ -354,10 +354,3 @@ RETURN DIVIDE(cov, sx * sy)
 
 ---
 
-## 12. About the Author
-
-**Susmita Kumari Giri**
-
-- Master of Digital Business (AI & Business Analytics), University of Waikato · MBA (Finance)
-- Interested in Business Analyst, Pricing Analyst and Commercial Analyst roles in New Zealand
-- 🔗 [LinkedIn](https://www.linkedin.com/in/your-profile) · 📧 [Email](mailto:your-email@example.com)
